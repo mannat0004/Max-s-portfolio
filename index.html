@@ -6,10 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Max's Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    integrity="sha512-ZGXY+klA7Z7W8gPDrTRh/3Yzj2n+eFwFZ2ceBNgGp6YuyKbRgL1h96POFucFeZDsp5+XZPmh+Xw3uQDp5Xqemg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
   <style>
     * {
       margin: 0;
@@ -69,9 +66,8 @@
       font-size: 1.01rem;
     }
 
-    main hr {
-      margin: 40px 84px;
-    }
+
+
 
     .firstsection {
       display: flex;
@@ -92,6 +88,38 @@
       font-size: 2.5rem;
     }
 
+    .email-box {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      width: fit-content;
+      margin: 30px auto;
+      font-size: 20px;
+      color: white;
+      border-radius: 10px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      display: none;
+    }
+
+    .email-box.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .email-box a {
+      color: rgb(189, 120, 253);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .email-box a:hover {
+      color: rgb(251, 178, 251);
+    }
+
     .rightsection img {
       width: 100%;
       max-width: 400px;
@@ -105,17 +133,9 @@
       box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
     }
 
-    .purple {
-      color: rgb(189, 120, 253);
-    }
-
+    .purple,
     #element {
       color: rgb(189, 120, 253);
-    }
-
-    .secondsection {
-      text-align: center;
-      margin-top: 20px;
     }
 
     .experience-section {
@@ -135,11 +155,8 @@
 
     .exp-block img {
       width: 300px;
-      max-width: 100%;
       border-radius: 10px;
       transition: transform 0.4s ease, box-shadow 0.4s ease;
-      display: block;
-      margin: auto;
     }
 
     .exp-block img:hover {
@@ -152,31 +169,8 @@
       padding: 20px;
       font-size: 20px;
       font-weight: bold;
-      color: #fff;
       min-width: 280px;
     }
-
-    .exp-block.reverse {
-      flex-direction: row-reverse;
-    }
-
-    @media (max-width: 768px) {
-      .exp-block {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-      }
-
-      .exp-block.reverse {
-        flex-direction: column;
-      }
-
-      .exp-block p {
-        width: 90%;
-        margin: auto;
-      }
-    }
-
 
     .exp-block.reverse {
       flex-direction: row-reverse;
@@ -192,14 +186,10 @@
       nav ul {
         flex-direction: column;
         align-items: center;
-        margin-top: 10px;
       }
 
-      nav ul li {
-        margin: 10px 0;
-      }
-
-      .firstsection {
+      .exp-block,
+      .exp-block.reverse {
         flex-direction: column;
         text-align: center;
       }
@@ -207,165 +197,168 @@
       .leftsection {
         font-size: 2rem;
       }
-
-      .exp-block {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .exp-block.reverse {
-        flex-direction: column;
-      }
-
-      .exp-block p {
-        width: 90%;
-        font-size: 18px;
-      }
     }
 
-    /* Social media icon glow hover effects */
+    /* ABOUT SECTION */
+    #about {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    #about.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .about-section {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: rgb(19, 19, 75);
+      padding: 40px 20px;
+      color: white;
+      text-align: center;
+    }
+
     footer a {
       transition: all 0.3s ease;
       font-size: 28px;
+      margin: 0 15px;
+      color: white;
     }
 
-    /* Instagram */
     footer a:hover .fa-instagram {
       color: #e1306c;
-      text-shadow: 0 0 10px #e1306c, 0 0 20px #e1306c;
+      text-shadow: 0 0 10px #e1306c;
     }
 
-    /* Snapchat */
     footer a:hover .fa-snapchat-ghost {
       color: #fffc00;
-      text-shadow: 0 0 10px #fffc00, 0 0 20px #fffc00;
+      text-shadow: 0 0 10px #fffc00;
     }
 
-    /* YouTube */
     footer a:hover .fa-youtube {
       color: #ff0000;
-      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+      text-shadow: 0 0 10px #ff0000;
     }
 
-    /* Twitter */
     footer a:hover .fa-twitter {
       color: #1da1f2;
-      text-shadow: 0 0 10px #1da1f2, 0 0 20px #1da1f2;
+      text-shadow: 0 0 10px #1da1f2;
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <nav>
-      <div class="left">Max's Portfolio</div>
-      <div class="right">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Contact Me</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+  <nav>
+    <div class="left">Max's Portfolio</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#contact">Contact Me</a></li>
 
-  <main>
-    <section class="firstsection">
-      <div class="leftsection">Hi, My Name Is
-        <span class="purple">Max</span>
-        <div>and I am a Passionate</div>
-        <span id="element"></span>
-      </div>
-      <div class="rightsection">
-        <img src="web.png" alt="Web Developer Image" />
-      </div>
-    </section>
+    </ul>
+  </nav>
 
-    <section class="secondsection">
-      <hr />
-    </section>
-
-    <section class="secondsection">
-      <h1>Past Experience</h1>
-    </section>
-  </main>
+  <section class="firstsection">
+    <div class="leftsection">Hi, My Name Is
+      <span class="purple">Max</span>
+      <div>and I am a Passionate</div>
+      <span id="element"></span>
+    </div>
+    <div class="rightsection">
+      <img src="web.png" alt="Web Developer Image" />
+    </div>
+  </section>
 
   <section class="experience-section">
     <div class="exp-block">
       <img src="photo1.jpg" alt="Experience 1" />
-      <p>
-         I am a professional web developer with experience in building responsive, user-friendly websites using modern
-        technologies. I focus on clean design, efficient code, and creating seamless digital experiences for users.
-      </p>
+      <p>Professional web developer with responsive, clean design and efficient coding.</p>
     </div>
-
     <div class="exp-block reverse">
       <img src="photo2.jpg" alt="Experience 2" />
-      <p>
-
-         I am a professional video editor with years of experience, skilled in crafting compelling visuals, cinematic
-        storytelling, and seamless transitions to bring ideas to life with creativity and precision.
-      </p>
+      <p>Skilled video editor with cinematic storytelling and creative precision.</p>
     </div>
-
     <div class="exp-block reverse">
       <img src="photo3.jpg" alt="Experience 3" />
-      <p>I am a skilled script writer with a passion for storytelling. I craft engaging, impactful scripts for videos,
-        films, and digital content that connect with audiences and convey clear messages.
-
-
-
-
-        
-      </p>
+      <p>Script writer crafting impactful content for video and digital platforms.</p>
     </div>
   </section>
-  <!-- Footer -->
-  <footer style="background-color: rgb(19, 19, 75); padding: 40px 20px; color: white; text-align: center;">
-    <div style="max-width: 900px; margin: auto;">
-      <h2>About Me</h2>
-      <p style="margin: 20px 0; font-size: 16px; line-height: 1.6;">
-        Hello! I'm Max, a passionate Web Developer with a love for turning ideas into interactive digital experiences. I
-        specialize in modern web design, responsive layouts, and creating engaging content across different platforms.
-        When I'm not coding, I'm editing videos, crafting marketing strategies, or writing scripts!
-      </p>
 
-      <h3>Follow Me</h3>
-      <div style="margin-top: 20px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-        <a href="https://instagram.com" target="_blank"
-          style="color: white; font-size: 28px; transition: color 0.3s ease;">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://snapchat.com" target="_blank"
-          style="color: white; font-size: 28px; transition: color 0.3s ease;">
-          <i class="fab fa-snapchat-ghost"></i>
-        </a>
-        <a href="https://youtube.com" target="_blank"
-          style="color: white; font-size: 28px; transition: color 0.3s ease;">
-          <i class="fab fa-youtube"></i>
-        </a>
-        <a href="https://twitter.com" target="_blank"
-          style="color: white; font-size: 28px; transition: color 0.3s ease;">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </div>
+  <section id="about" class="about-section">
+    <h2>About Me</h2>
+    <p>Hello! I'm Max, a passionate Web Developer. I specialize in modern web design, responsive layouts, and engaging
+      digital content. I also work as a video editor, marketer, and script writer.</p>
+  </section>
+  <!-- Contact Email Box -->
+  <div id="contact-email" class="email-box">
+    📧 Email me at: <a href="mailto:hm8383963@gmail.com">hm8383963@gmail.com</a>
+  </div>
 
-      <p style="margin-top: 30px; font-size: 14px; color: #bbb;">&copy; 2025 Max's Portfolio. All rights reserved.</p>
+
+  <footer>
+    <h3>Follow Me</h3>
+    <div>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://snapchat.com" target="_blank"><i class="fab fa-snapchat-ghost"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
     </div>
+    <p style="margin-top: 30px; font-size: 14px; color: #bbb;">&copy; 2025 Max's Portfolio. All rights reserved.</p>
   </footer>
-
 
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <script>
-    var typed = new Typed('#element', {
-      strings: ['Web Developer', 'Video Editor', 'Digital Marketer', 'Script Writer'],
-      typeSpeed: 50,
-      backSpeed: 30,
-      loop: true,
+  // Typed animation for roles
+  new Typed('#element', {
+    strings: ['Web Developer', 'Video Editor', 'Digital Marketer', 'Script Writer'],
+    typeSpeed: 50,
+    backSpeed: 30,
+    loop: true
+  });
+
+  // About section reveal
+  const aboutSection = document.getElementById('about');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        aboutSection.classList.add('visible');
+      }
     });
-  </script>
+  }, { threshold: 0.2 });
+
+  observer.observe(aboutSection);
+
+  // Contact box reveal with animation
+  document.querySelector('a[href="#contact"]').addEventListener('click', function (e) {
+    e.preventDefault();
+    const contactDiv = document.getElementById('contact-email');
+    contactDiv.style.display = 'block';
+
+    // Trigger transition
+    setTimeout(() => {
+      contactDiv.classList.add('show');
+    }, 50); // slight delay ensures transition applies
+
+    contactDiv.scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
+
+  
+  
+
+
 </body>
 
 </html>
